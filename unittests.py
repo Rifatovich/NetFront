@@ -1,6 +1,6 @@
 import unittest
 import dpkt
-from pcap_parser import add_packets, ip_protocol_prop
+from pcap_parser import ip_protocol_prop
 
 class TestParser(unittest.TestCase):
     def setUp(self):
