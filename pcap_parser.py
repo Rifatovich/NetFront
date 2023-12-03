@@ -123,7 +123,7 @@ def ip_protocol_prop(self, indent=1):
     return ip_prot
 
 
-def create_mimishark_json(pcap, to_json):
+def create_mimishark_json(pcap):
 
     json_file = []
 
@@ -181,19 +181,16 @@ def create_mimishark_json(pcap, to_json):
                 pcap_file[f"decode_{ip.data.__class__.__name__}"] = ip_protocol_prop(ip.data)
             json_file.append(pcap_file)
 
-        print(json.dumps(json_file), file=file)
+    return json_file
 
 
-def from_pcap_to_json(from_pcap, to_json):
-    # Do we already have a JSON file?
-    if os.path.isfile(to_json):
-        return to_json
-
-    # No ?
-    # Is pcap file exists?
-    if not os.path.isfile(from_pcap):
-        return False
-
-    with open(from_pcap, 'rb') as f:
+def Add_Json():
+    with open('temp/testsforparser.pcap', 'rb') as f:
         pcap = dpkt.pcap.Reader(f)
-        create_mimishark_json(pcap, to_json)
+        json_file = add_packets(pcap)
+    with open("pcap.json", "w") as file:
+            print(json.dumps(json_file), file=file)
+
+
+if __name__ == '__main__':
+    Add_Json()
