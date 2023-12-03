@@ -187,7 +187,7 @@ def create_mimishark_json(pcap):
 def Add_Json():
     with open('temp/testsforparser.pcap', 'rb') as f:
         pcap = dpkt.pcap.Reader(f)
-        json_file = add_packets(pcap)
+        json_file = create_mimishark_json(pcap)
     with open("pcap.json", "w") as file:
             print(json.dumps(json_file), file=file)
 
