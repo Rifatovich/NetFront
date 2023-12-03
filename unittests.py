@@ -9,7 +9,7 @@ class TestParser(unittest.TestCase):
         self.pcap = dpkt.pcap.Reader(open('temp/testsforparser.pcap','rb'))
         self.ip = "bad ip"
     def test_parser(self):
-        self.assertEqual(self.parser(self.pcap, to_json)[0]["length"], 52)
+        self.assertEqual(self.parser(self.pcap, temp/to_json.json)[0]["length"], 52)
     def test_prot_prop(self):
         self.assertEqual(self.ip_prop(self.ip), "No protocol")  
 if __name__ == "__main__":
