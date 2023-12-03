@@ -1,10 +1,10 @@
 import unittest
 import dpkt
-from pcap_parser import ip_protocol_prop
+from pcap_parser import create_mimishark_json, ip_protocol_prop
 
 class TestParser(unittest.TestCase):
     def setUp(self):
-        self.parser = add_packets
+        self.parser = create_mimishark_json
         self.ip_prop = ip_protocol_prop
         self.pcap = dpkt.pcap.Reader(open('temp/testsforparser.pcap','rb'))
         self.ip = "bad ip"
