@@ -127,7 +127,6 @@ def create_mimishark_json(pcap):
 
     json_file = []
 
-    with open(to_json, "w") as file:
         for timestamp, buf in pcap:
             pcap_file = {}
             eth = dpkt.ethernet.Ethernet(buf)
