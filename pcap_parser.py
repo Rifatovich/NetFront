@@ -124,9 +124,7 @@ def ip_protocol_prop(self, indent=1):
 
 
 def create_mimishark_json(pcap):
-
-    json_file = []
-
+        json_file = []
         for timestamp, buf in pcap:
             pcap_file = {}
             eth = dpkt.ethernet.Ethernet(buf)
