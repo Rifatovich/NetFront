@@ -178,7 +178,7 @@ def create_mimishark_json(pcap):
                 pcap_file[f"decode_{ip.data.__class__.__name__}"] = ip_protocol_prop(ip.data)
             json_file.append(pcap_file)
 
-    return json_file
+        return json_file
 
 
 def Add_Json():
